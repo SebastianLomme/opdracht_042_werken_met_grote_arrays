@@ -76,23 +76,23 @@ const printCardElement = (element) => {
     btn.classList.add("card-btn")
     newDiv.classList.add("card")
     textContainer[1].appendChild(newDiv)
-    btn.id = element.surname
+    btn.id = element.credit_card.number
 }
 
 const filterMatch = (e) => {
     removeElement(0)
     removeElement(1)
         arrayMatch.forEach(element => {
-            if ( e === element.surname){
+            if ( e === element.credit_card.number){
                 let elementSteren = getSterrenbeeld(element)
                 let elementRegion = element.region
                 let newArray = arrayMatch.filter(element => elementSteren == getSterrenbeeld(element)).filter(element => elementRegion == element.region)
                 newArray.forEach(element => {
-                    if (element.surname !== e){
+                    if (element.credit_card.number !== e){
                     printCardElement(element)
                     setBtn()}
 
-                    else if (element.surname == e){
+                    else if (element.credit_card.number == e){
                         const headingMatch = document.createElement("h2")
                         const newDiv = document.createElement("div")
                         const heading = document.createElement("h4")
@@ -119,7 +119,7 @@ const filterMatch = (e) => {
                         btn.classList.add("card-btn")
                         newDiv.classList.add("card")
                         textContainer[0].appendChild(newDiv)
-                        btn.id = element.surname
+                        btn.id = element.credit_card.number
                     }
                 })
             }
