@@ -1,0 +1,65 @@
+@import "mixin";
+@import "variables";
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    background: $base-color;
+    font-family: $ff-body;
+    line-height: 1.5;
+    letter-spacing: 1.3px;
+}
+
+.btn-container {
+    max-width: 800px;
+    margin: 20px auto;
+    display: flex;
+    justify-content: space-between;
+}
+.text-container,
+.match-container {
+    max-width: 800px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+}
+
+.btn {
+    background: rgb(18, 19, 18);
+    color: #fff;
+    border: none;
+    padding: .5rem 1rem;
+    border-radius: 50rem;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background: #fff;
+    color: rgb(18, 19, 18);
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    max-width: 200px;
+    padding: 20px;
+    justify-content:space-between;
+    background: grey;
+    border-radius: 50px;
+    margin: 20px;
+    text-align: center;
+
+    img {
+        width: 75px;
+        height: 75px;
+        margin: 0 auto;
+    }
+}
+
+p {
+    margin: 10px;
+}

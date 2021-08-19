@@ -1,0 +1,79 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Source+Code+Pro:ital,wght@0,700;1,400&display=swap");
+*, *::before, *::after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  background: lightgrey;
+  font-family: "Roboto", sans-serif;
+  line-height: 1.5;
+  letter-spacing: 1.3px;
+}
+
+.btn-container {
+  max-width: 800px;
+  margin: 20px auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.text-container,
+.match-container {
+  max-width: 800px;
+  margin: 0 auto;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (auto)[3];
+      grid-template-columns: repeat(3, auto);
+}
+
+.btn {
+  background: #121312;
+  color: #fff;
+  border: none;
+  padding: .5rem 1rem;
+  border-radius: 50rem;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background: #fff;
+  color: #121312;
+}
+
+.card {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  max-width: 200px;
+  padding: 20px;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  background: grey;
+  border-radius: 50px;
+  margin: 20px;
+  text-align: center;
+}
+
+.card img {
+  width: 75px;
+  height: 75px;
+  margin: 0 auto;
+}
+
+p {
+  margin: 10px;
+}
+/*# sourceMappingURL=style.css.map */
