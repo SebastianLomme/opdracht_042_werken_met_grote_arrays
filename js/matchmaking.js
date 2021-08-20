@@ -60,10 +60,8 @@ const printCardElement = (element) => {
     const newPa = document.createElement("p")
     const btn = document.createElement("button")
     const sterr = getSterrenbeeld(element)
-    age = element.age 
-    newPa.innerText = `${sterr} ${age} jaar`
-    name = `${element.name} ${element.surname} `
-    heading.innerText= name
+    newPa.innerText = `${sterr} ${element.age} jaar`
+    heading.innerText= `${element.name} ${element.surname} `
     btn.innerText = "Vind matches"
     newImg.setAttribute("src", element.photo)
     newP.innerText = `${element.region}`
@@ -75,8 +73,8 @@ const printCardElement = (element) => {
     btn.classList.add("btn")
     btn.classList.add("card-btn")
     newDiv.classList.add("card")
-    textContainer[1].appendChild(newDiv)
     btn.id = element.credit_card.number
+    return newDiv
 }
 
 const filterMatch = (e) => {
@@ -89,38 +87,18 @@ const filterMatch = (e) => {
                 let newArray = arrayMatch.filter(element => elementSteren == getSterrenbeeld(element)).filter(element => elementRegion == element.region)
                 newArray.forEach(element => {
                     if (element.credit_card.number !== e){
-                    printCardElement(element)
+                    newDiv = printCardElement(element)
+                    textContainer[1].appendChild(newDiv)
                     setBtn()}
 
+
                     else if (element.credit_card.number == e){
-                        const headingMatch = document.createElement("h2")
-                        const newDiv = document.createElement("div")
-                        const heading = document.createElement("h4")
-                        const newP = document.createElement("p")
-                        const newImg = document.createElement("img")
-                        const newPa = document.createElement("p")
-                        const btn = document.createElement("button")
-                        const sterr = getSterrenbeeld(element)
-                        age = element.age 
-                        newPa.innerText = `${sterr} ${age} jaar`
-                        name = `${element.name} ${element.surname} `
-                        heading.innerText= name
-                        headingMatch.innerText= "Match"
-                        btn.innerText = "Vind matches"
-                        newImg.setAttribute("src", element.photo)
-                        newP.innerText = `${element.region}`
-                        newDiv.appendChild(headingMatch)
-                        newDiv.appendChild(heading)
-                        newDiv.appendChild(newImg)
-                        newDiv.appendChild(newP)
-                        newDiv.appendChild(newPa)
-                        newDiv.appendChild(btn)
-                        btn.classList.add("btn")
-                        btn.classList.add("card-btn")
-                        newDiv.classList.add("card")
-                        textContainer[0].appendChild(newDiv)
-                        btn.id = element.credit_card.number
-                    }
+                            const headingMatch = document.createElement("h2")
+                            headingMatch.innerText= "Match"
+                            newDiv = printCardElement(element)
+                            textContainer[0].appendChild(newDiv)
+                            document.getElementsByTagName("h4")[0].appendChild(headingMatch)
+                        }
                 })
             }
     }
@@ -142,11 +120,10 @@ randomPersonData.forEach(element => {
     )
     mensenBtn.addEventListener("click", ()=> {
     removeElement(0)
-    removeElement(0)
+    removeElement(1)
     arrayMatch.map(element => {
-        printCardElement(element)
+        newDiv = printCardElement(element)
+        textContainer[1].appendChild(newDiv)
     })
     setBtn()
 })
-
-
