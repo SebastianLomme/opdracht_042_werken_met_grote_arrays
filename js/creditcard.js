@@ -1,7 +1,6 @@
 const arrayCredit = []
 const creditBtn = document.getElementById("credit-btn")
-
-const createNewDate =(year, month, day) =>  new Date(year, month)
+const createNewDate = (year, month, day) => new Date(year, month)
 
 
 randomPersonData
@@ -13,7 +12,8 @@ randomPersonData
     const newDate = new Date()
     const newDateY = Number(newDate.getFullYear())
 
-    if (exprDate > newDate && exprDateY === newDateY) {
+
+    if ((exprDate < newDate && exprDateY === newDateY )|| exprDateY < newDateY) {
         arrayCredit.push(element)
         arrayCredit.sort((a,b) => a.credit_card.expiration.split("/")[0] - b.
         credit_card.expiration.split("/")[0])
